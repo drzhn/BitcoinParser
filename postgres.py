@@ -8,6 +8,7 @@ class PgHash:
         self.conn = psycopg2.connect(database="bitcoindb", user="klever", password="")
         self.cur = self.conn.cursor()
         self.conn.autocommit = True
+
     def refresh_db(self):
         try:
             self.cur.execute("DROP TABLE IF EXISTS idbyhash;")
